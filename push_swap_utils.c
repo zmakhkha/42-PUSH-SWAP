@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:53:33 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/13 19:59:37 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:15:40 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	swap(t_list *a)
 		tmp = a->next;
 		a = a->next;
 		ft_lstadd_front(&a, tmp);
+		free(tmp);
 	}
 }
 

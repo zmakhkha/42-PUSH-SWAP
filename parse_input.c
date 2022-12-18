@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:55:48 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/14 14:03:58 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:57:23 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_check_input(char **table)
 	i = 1;
 	while (table[i])
 	{
-		if (isNumber(table[i]))
+		if (ft_isdigit(ft_atoi(table[i])))
 			i++;
 		else
 			return (0);

@@ -6,27 +6,27 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:42:54 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/18 18:22:34 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:18:03 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libc.h>
 #include"push_swap.h"
 
-int main()
+int main(int n, char **v)
 {
-	t_list_d *new;
-	int	i = 5;
+	t_list_d *lst;
 
-	new = ft_lstnew_d(15);
-	while(i--)
-	{
-		ft_lstadd_back_d(&new ,ft_lstnew_d(i*2));
-	}
-	while (new)
-	{
-		printf("%d", new->content);
-		new = new -> next;
+	(void )n;
+	if (ft_check_input(v))
+	{		
+		lst = ft_fill_it(v);
+		while (lst)
+		{
+			printf("%d", lst ->content);
+			lst = lst ->prev;
+		}
+		return (1);
 	}
 	return (0);
 	

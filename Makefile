@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = 	parse_input.c	main.c	push_swap_utils.c	s_list_d_utils.c	main.c
+SRC = 	parse_input.c	push_swap_utils.c	s_list_d_utils.c	ft_functions.c	main.c
 		
 
 OBJ = $(SRC:.c=.o)
@@ -14,7 +14,7 @@ $(NAME) : $(OBJ)
 	@make -C libft
 	@$(CC) $(OBJ) libft/libft.a -o $(NAME) 
 
-%.o : %.c push_swap.h 
+%.o : %.c push_swap.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

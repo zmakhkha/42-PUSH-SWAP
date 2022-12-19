@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:55:12 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/18 18:23:10 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:17:10 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@ typedef struct s_node
 int	ft_check_input(char **table);
 int	ft_isnumber(char *number);
 
+void		ft_lstadd_front_d(t_list_d **lst, t_list_d *new);
+void		ft_lstadd_back_d(t_list_d **lst, t_list_d *back);
+t_list_d	*ft_fill_it(char **args);
 t_list_d	*ft_lstnew_d(int content);
-void	ft_lstadd_front_d(t_list_d **lst, t_list_d *new);
-void	ft_lstadd_back_d(t_list_d **lst, t_list_d *back);
-t_list_d *ft_get_end_d(t_list_d *list);
+t_list_d 	*ft_get_end_d(t_list_d *list);
 
-
+void	swap(t_list_d *a);
+void	push( t_list_d **a, t_list_d *b);
+void	rotate(t_list_d **a);
+void	reverse_rotate(t_list_d **a);
 
 #endif

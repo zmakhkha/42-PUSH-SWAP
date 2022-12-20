@@ -12,7 +12,7 @@ all: $(NAME) libft
 
 $(NAME) : $(OBJ)
 	@make -C libft
-	@$(CC) $(OBJ) libft/libft.a -o $(NAME) 
+	@$(CC) $(OBJ) libft/libft.a -o $(NAME)
 
 %.o : %.c push_swap.h
 	@$(CC) $(CFLAGS) -c $< -o $@

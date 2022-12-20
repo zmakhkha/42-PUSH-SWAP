@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:55:12 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/19 19:17:10 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/20 16:40:00 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_node
 	int				content;
 } t_list_d;
 
-int	ft_check_input(char **table);
+int	ft_check_input(int n, char **table);
 int	ft_isnumber(char *number);
 
 void		ft_lstadd_front_d(t_list_d **lst, t_list_d *new);

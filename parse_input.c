@@ -6,26 +6,31 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:55:48 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/16 14:57:23 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:23:11 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_input(char **table)
+int	ft_check_input(int n, char **table)
 {
 	int	i;
 
 	i = 1;
-	while (table[i])
+	while (i < n)
 	{
-		if (ft_isdigit(ft_atoi(table[i])))
+		if (ft_isnumber(table[i]))
 			i++;
 		else
 			return (0);
 	}
 	return (1);
 }
+
+//int ft_check_duplicate(int n, char **table)
+//{
+	
+//}
 
 int	ft_isnumber(char *number)
 {

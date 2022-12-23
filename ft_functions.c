@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:18:20 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/19 19:16:26 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/23 18:00:16 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,15 @@ t_list_d	*ft_fill_it(char **args)
 		ft_lstadd_back_d(&lst, tmp);
 	}
 	return (lst);
+}
+
+void	ft_detect_overflow(char *s)
+{
+	int		a;
+	size_t	b;
+
+	a = ft_atoi(s);
+	b = ft_atoi_long(s);
+	if ((a/b) != 1)
+		ft_print_error("Overflow");
 }

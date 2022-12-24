@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = 	parse_input.c	push_swap_utils.c	s_list_d_utils.c	ft_functions.c	ft_atoi_long.c	main.c
+SRC = 	parse_input.c	push_swap_utils.c	s_list_d_utils.c	ft_functions.c	ft_atoi_long.c	parse_input_utils.c	main.c
 		
 
 OBJ = $(SRC:.c=.o)

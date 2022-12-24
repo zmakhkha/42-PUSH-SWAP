@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_input_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 16:42:54 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/24 16:12:17 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/12/24 16:04:08 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/12/24 16:07:20 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-#include"push_swap.h"
+#include "push_swap.h"
 
-int main(int n, char **v)
+char	*ft_join_free(char	*s1, char *s2)
 {
-	ft_parse_it(n, v);
-	//t_list_d *lst;
+	char	*res;
 
-	//if (n == 1)
-	//	return 0;
-	//if (ft_check_input(n, v))
-	//{	
-	//	lst = ft_fill_it(v);
-	//	while (lst)
-	//	{
-	//		printf("%d ->", lst ->content);
-	//		lst = lst ->prev;
-	//	}
-	//		printf("(null)");
-	//	return (1);
-	//}
-	//else
-	//	printf("Error");
-	//char **a;
+	res = ft_strjoin(s1, s2);
+	free (s1);
+	return (res);
+}
 
-	return (0);
-	
+void	ft_print_error(char *err)
+{
+	write(1, err, ft_strlen(err));
+	exit(1);
+}
+
+void	ft_isnumber(char *number)
+{
+	int	i;
+
+	i = 0;
+	if (number[0] == '-' || number[0] == '+')
+		i++;
+	while (number[i])
+	{
+		if (!ft_isdigit(number[i]))
+			ft_print_error("Not a number\n");
+		i++;
+	}
 }

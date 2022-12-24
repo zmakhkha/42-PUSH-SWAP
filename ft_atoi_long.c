@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 14:21:30 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/23 17:59:01 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/24 15:40:47 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	size_t	ret_nbr(char *tmp)
 {
 	int	i;
-	size_t	res;
+	unsigned long	res;
 
 	i = 0;
 	res = 0;
@@ -31,7 +31,7 @@ static	size_t	ret_nbr(char *tmp)
 	return (res);
 }
 
-int	ft_atoi_long(const char *str)
+unsigned long	ft_atoi_long(const char *str)
 {
 	char	*tmp;
 	int		i;

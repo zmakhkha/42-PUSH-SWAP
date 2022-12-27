@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = 	parse_input.c	push_swap_utils.c	s_list_d_utils.c	ft_functions.c	ft_atoi_long.c	parse_input_utils.c	main.c
+SRC = main.c ft_functions.c parse_input_utils.c parse_input.c push_swap_utils.c
 		
 
 OBJ = $(SRC:.c=.o)
@@ -8,11 +8,12 @@ CC = cc
 
 CFLAGS = -Wextra -Wall -Werror
 
-all : $(NAME) libft
+all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@make -C libft
-	@$(CC) $(OBJ) libft/libft.a -o $(NAME)
+	@make -C ./libft/dll
+	@$(CC) $(SRC) libft/libft.a  ./libft/dll/dll.a -o $(NAME) -g
 	
 
 %.o	: %.c push_swap.h
@@ -31,4 +32,4 @@ norm :
 
 re : fclean all
 
-.PHONY: clean fclean all re libft
+.PHONY: clean fclean all re norm

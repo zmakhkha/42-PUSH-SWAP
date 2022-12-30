@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:42:54 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/27 17:45:18 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/30 17:29:01 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,42 @@ void CheckLeks()
 {
 	system("leaks push_swap");
 }
+
 int main(int n, char **v)
 {
-	//atexit(CheckLeks);
-	ft_parse_it(n, v);
-	t_list_d *lst;
+	t_list_d *a;
 	t_list_d *tmp;
+	t_list_d *b;
+	ft_parse_it(n, v); 
 	
-	 lst = ft_fill_it(v);
-	 tmp = lst;
-	 while (tmp)
-	 {
-		printf("%d\n", tmp->content);
+	a = ft_fill_it(v);
+	tmp = a;	
+	printf("=========>A\n");
+	while (tmp)
+	{
+		printf("%d ->", tmp->content);
 		tmp = tmp -> prev;
-	 }
-	printf("===========\n");
-	swap(&lst, "a");
-	while (lst -> prev)
-	 {
-		printf("%d\n", lst->content);
-		lst = lst -> prev;
-	 }
-	printf("===========\n");
-	 while (lst)
-	 {
-		printf("%d\n", lst->content);
-		lst = lst -> next;
-	 }
-	//while (tmp)
-	// {
-	//	printf("%d\n", lst->content);
-	//	//tmp = lst;
-	//	tmp = tmp -> prev;
-	//	//free(tmp);
-	// }
+	}
+	printf("\n");
+	push(&a, &b,"a");
+	push(&a, &b,"a");
+	tmp = a;
+	printf("=========>A\n");
+	while (tmp)
+	{
+		printf("%d ->", tmp->content);
+		tmp = tmp -> prev;
+	}
+	printf("\n");	
+	printf("=========>B\n");
+	tmp = b;
+	while (tmp)
+	{
+		printf("%d ->", tmp->content);
+		tmp = tmp -> prev;
+	}
+	printf("\n");	
+	ft_free_list_d(&a);
+	ft_free_list_d(&b);
+
 }

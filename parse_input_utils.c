@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:04:08 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/24 16:07:20 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/30 17:30:49 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_join_free(char	*s1, char *s2)
 
 	res = ft_strjoin(s1, s2);
 	free (s1);
+	free (s2);
 	return (res);
 }
 
@@ -34,10 +35,18 @@ void	ft_isnumber(char *number)
 	i = 0;
 	if (number[0] == '-' || number[0] == '+')
 		i++;
+	if (!number[i])
+	{
+		free (number);
+		ft_print_error("Maaaachi number\n");
+	}
 	while (number[i])
 	{
 		if (!ft_isdigit(number[i]))
+		{
+			free (number);
 			ft_print_error("Not a number\n");
+		}
 		i++;
 	}
 }

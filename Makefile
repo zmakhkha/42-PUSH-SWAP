@@ -13,7 +13,8 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	@make -C libft
 	@make -C ./libft/dll
-	@$(CC) $(SRC) libft/libft.a  ./libft/dll/dll.a -o $(NAME) -g
+	@$(CC) $(SRC) libft/libft.a  ./libft/dll/dll.a -o $(NAME) -g -fsanitize=address
+	
 	
 
 %.o	: %.c push_swap.h

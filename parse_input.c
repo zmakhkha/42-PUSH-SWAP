@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:55:48 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/24 16:11:23 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/30 17:44:45 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,23 @@ void	ft_check_input(int n, char **table)
 	{
 		tmp = ft_strtrim(table[i], " ");
 		if (*tmp == '\0')
+		{
+			free (str);
+			free (tmp);
 			ft_print_error("Empty Argument\n");
+		}
 		str = ft_join_free(str, tmp);
-		str = ft_join_free(str, " ");
+		str = ft_join_free(str, ft_strdup(" "));
 	}
 	splited = ft_split(str, ' ');
 	i = -1;
 	while (splited[++i])
+	{
 		ft_isnumber(splited[i]);
+		free (splited[i]);
+	}
+	free (str);
+	free (splited);
 }
 
 void	ft_check_number_duplicate(int n, char **tab)
@@ -44,24 +53,24 @@ void	ft_check_number_duplicate(int n, char **tab)
 	int_tab = (int *)malloc((n - 1) * sizeof(int));
 	if (!int_tab)
 		ft_print_error("Alocation Failed (ft_check_number_duplicate)\n");
-	i = 1;
-	while (i < n)
+	i = -1;
+	while (++i < n - 1)
 	{
-		ft_check_overflow(tab[i]);
-		int_tab[i - 1] = ft_atoi(tab[i]);
-		i++;
+		ft_check_overflow(tab[i + 1]);
+		int_tab[i] = ft_atoi(tab[i + 1]);
 	}
 	i = -1;
-	while (++i < n -1)
+	while (++i < n - 1)
 	{
-		j = i + 1;
-		while (j < n)
+		if (n - 1 >= i + 1)
+			j = i;
+		while (++j < n - 1)
 		{
 			if (int_tab[i] == int_tab[j])
 				ft_print_error("Duplicated number\n");
-			j++;
 		}
 	}
+	free (int_tab);
 }
 
 void	ft_check_overflow(char *a)

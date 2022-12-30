@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:18:20 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/12/25 15:36:13 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:16:57 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,14 @@ t_list_d	*ft_fill_it(char **args)
 {
 	int			i;
 	t_list_d	*lst;
+	t_list_d	*tmp;
 
 	lst = NULL;
 	i = 0;
 	while (args[++i])
-		ft_lstadd_back_d(&lst, ft_lstnew_d(ft_atoi(args[i])));
+	{
+		tmp = ft_lstnew_d(ft_atoi(args[i]));
+		ft_lstadd_back_d(&lst, tmp);
+	}
 	return (lst);
 }

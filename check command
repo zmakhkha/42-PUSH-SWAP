@@ -1,0 +1,1 @@
+A=`seq 3 | sort -R`; make && make clean && ./push_swap $A | ./checker_Mac $A

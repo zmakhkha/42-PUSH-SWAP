@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = main.c ft_functions.c parse_input_utils.c parse_input.c push_swap_utils.c
+SRC = main.c ft_functions.c parse_input_utils.c parse_input.c push_swap_utils.c sorting_utils.c
 		
 
 OBJ = $(SRC:.c=.o)
@@ -13,7 +13,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	@make -C libft
 	@make -C ./libft/dll
-	@$(CC) $(SRC) libft/libft.a  ./libft/dll/dll.a -o $(NAME) -g -fsanitize=address
+	@$(CC) $(SRC) libft/libft.a  ./libft/dll/dll.a -o $(NAME) -g #-fsanitize=address
 	
 	
 

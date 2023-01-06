@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:18:20 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/02 18:29:40 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:22:33 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,25 +72,21 @@ int 	ft_lst_len(t_list_d *a)
 	}
 	return (i);
 }
-//// get the middle of the list
-//t_list_d	*ft_get_middle(t_list_d *list)
-//{
-//	t_list_d	*r1;
-//	t_list_d	*r2;
 
-//	if (list)
-//	{
-//		r1 = list;
-//		r2 = list;
-//		while (r2)
-//		{
-//			if (r2 && r2 -> next && r2 -> next)
-//			{
-//				r2 = r2 -> next ->next;
-//				r1 = r1 -> next;
-//			}
-//		}
-//	return (r1);
-//	}
-//	return (NULL);
-//}
+void	rr(t_list_d **a, t_list_d **b)
+{
+	rotate(a, "a");
+	rotate(b, "b");
+}
+
+void	rrr(t_list_d **a, t_list_d **b)
+{
+	reverse_rotate(a, "a");
+	reverse_rotate(b, "b");
+}
+
+void	ss(t_list_d **a, t_list_d **b)
+{
+	swap(a, "a");
+	swap(b, "b");
+}

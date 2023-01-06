@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 14:55:27 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/03 20:09:31 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:24:53 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void	ft_sort_tree(t_list_d **a, char *c)
 		else if ((*a)-> prev -> index > (*a)-> index && \
 		(*a)-> index > (*a)-> prev ->prev ->index)
 			reverse_rotate(a, c);
+		else if ((*a)-> index < (*a)->prev->index && (*a)->prev->index)
+		{
+			rotate(a, c);
+			rotate(a, c);
+		}
 	}
 }
 
@@ -46,7 +51,6 @@ t_list_d	*ft_get_min(t_list_d *a)
 
 	if (a)
 	{
-		min = a;
 		min = a;
 		while (a)
 		{
@@ -112,6 +116,7 @@ void	ft_sort_five(t_list_d **a, t_list_d **b)
 
 	if (a && *a && ft_lst_len(*a) == 5 && !ft_issorted(*a))
 	{
+		ft_position_it(a);
 		if (ft_get_min(*a)->position > 2)
 		{
 			tmp_pos = ft_lst_len(*a) - ft_get_min(*a)->position + 2;

@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:55:12 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/06 19:06:03 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:11:36 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void			ft_index_it(t_list_d **list);
 int				ft_lst_len(t_list_d *a);
 
 void			ft_sort_tree(t_list_d **a, char *c);
-void 			ft_sort_four(t_list_d **a, t_list_d **b);
+void			ft_sort_four(t_list_d **a, t_list_d **b);
 t_list_d		*ft_get_min(t_list_d *a);
 int				ft_issorted(t_list_d *lst);
 void			ft_position_it(t_list_d **lst);
@@ -46,8 +46,6 @@ void			ft_push_it_back(t_list_d **a, t_list_d **b);
 void			ft_sort_all(t_list_d **a, t_list_d **b);
 
 int				ft_get_range(t_list_d *a);
-
-
 void			swap(t_list_d **a, char *c);
 void			push( t_list_d **src, t_list_d **dst, char *c);
 void			rotate(t_list_d **a, char *c);
@@ -57,5 +55,8 @@ void			rrr(t_list_d **a, t_list_d **b);
 void			rr(t_list_d **a, t_list_d **b);
 void			ss(t_list_d **a, t_list_d **b);
 
+void			ft_pro_swap(t_list_d **a, t_list_d **b, int i);
+void			ft_pro_rotate(t_list_d **a, t_list_d **b, int i);
+void			ft_pro_rrotate(t_list_d **a, t_list_d **b, int i);
 
 #endif

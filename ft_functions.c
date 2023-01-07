@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:18:20 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/06 19:22:33 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:09:32 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 // index the list
 void	ft_index_it(t_list_d **list)
 {
@@ -29,12 +29,12 @@ void	ft_index_it(t_list_d **list)
 			pos = *list;
 			while (pos)
 			{
-				if (lst -> content > pos -> content)
+				if (lst->content > pos->content)
 					i++;
-				pos = pos -> prev;
+				pos = pos->prev;
 			}
-			lst -> index = i;
-			lst = lst ->prev;
+			lst->index = i;
+			lst = lst->prev;
 		}
 	}
 }
@@ -50,16 +50,16 @@ void	ft_position_it(t_list_d **lst)
 		pos = *lst;
 		while (pos)
 		{
-			pos-> position = i;
+			pos->position = i;
 			i++;
-			pos = pos-> prev;
+			pos = pos->prev;
 		}
 	}
 }
 
-int 	ft_lst_len(t_list_d *a)
+int	ft_lst_len(t_list_d *a)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	if (a)
@@ -67,7 +67,7 @@ int 	ft_lst_len(t_list_d *a)
 		while (a)
 		{
 			i++;
-			a = a -> prev;
+			a = a->prev;
 		}
 	}
 	return (i);

@@ -6,17 +6,17 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:53:33 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/06 15:10:37 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:07:13 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <libc.h>
 
-void swap(t_list_d **a, char *c)
+void	swap(t_list_d **a, char *c)
 {
-	t_list_d *tmp;
-	t_list_d *pos;
+	t_list_d	*tmp;
+	t_list_d	*pos;
 
 	pos = *a;
 	if (pos && pos->prev)
@@ -35,9 +35,9 @@ void swap(t_list_d **a, char *c)
 	}
 }
 
-void push(t_list_d **src, t_list_d **dst, char *c)
+void	push(t_list_d **src, t_list_d **dst, char *c)
 {
-	t_list_d *tmp;
+	t_list_d	*tmp;
 
 	if (src && *src)
 	{
@@ -51,9 +51,9 @@ void push(t_list_d **src, t_list_d **dst, char *c)
 	}
 }
 
-void rotate(t_list_d **a, char *c)
+void	rotate(t_list_d **a, char *c)
 {
-	t_list_d *tmp;
+	t_list_d	*tmp;
 
 	if (a && *a && (*a)->prev)
 	{
@@ -68,10 +68,10 @@ void rotate(t_list_d **a, char *c)
 	}
 }
 
-void reverse_rotate(t_list_d **a, char *c)
+void	reverse_rotate(t_list_d **a, char *c)
 {
-	t_list_d *tmp;
-	t_list_d *last;
+	t_list_d	*tmp;
+	t_list_d	*last;
 
 	if (a && *a && (*a)->prev)
 	{

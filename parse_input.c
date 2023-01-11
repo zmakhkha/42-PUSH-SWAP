@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:55:48 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/09 12:36:14 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:36:43 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,32 +79,25 @@ int	*ft_check_number_duplicate(int n, char **tab)
 	return (int_tab);
 }
 
-void	ft_check_overflow(char *a)
+void	ft_skip_0(char *a)
 {
-	if ((unsigned long)ft_atoi(a) != ft_atoi_long(a))
+	int	i;
+	int	j;
+
+	i = 0;
+	while (a[i] == 48)
+		i++;
+	j = 0;
+	while (a[i + j])
+		j++;
+	if (j > 12)
 		ft_print_error("Error");
 }
 
-t_list_d	*ft_parse_it(int n, char **v)
+void	ft_check_overflow(char *a)
 {
-	char		**a;
-	int			*t;
-	int			i;
-	t_list_d	*lst;
-
-	a = ft_check_input(n, v);
-	n = 0;
-	while (a[n])
-		n++;
-	t = ft_check_number_duplicate(n, a);
-	lst = ft_fill_it(t, n);
-	i = 0;
-	while (a[i])
-	{
-		free (a[i]);
-		i++;
-	}
-	free (a);
-	free (t);
-	return (lst);
+	ft_skip_0(a);
+	if ((long long) INT_MIN >= ft_atoi_long(a) || \
+		ft_atoi_long(a) >= (long long)INT_MAX)
+		ft_print_error("Error");
 }

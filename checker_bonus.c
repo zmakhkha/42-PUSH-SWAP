@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:23:59 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/09 12:45:37 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:42:06 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	ft_check_p1(t_list_d **a, t_list_d **b, char *line)
 	return (i);
 }
 
-void	ft_check_sorting(t_list_d *a)
+void	ft_check_sorting(t_list_d *a, t_list_d *b)
 {
-	if (ft_issorted(a))
+	if (ft_issorted(a) && !ft_lst_len(b))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -84,7 +84,7 @@ int	main(int n, char **v)
 			free (line);
 			line = get_next_line(0);
 		}
-		ft_check_sorting(a);
+		ft_check_sorting(a, b);
 		ft_free_list_d(&a);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 10:19:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/07 18:05:11 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:54:58 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				ft_lstsize(t_list *lst);
 char			**ft_split(char const *s, char c);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
-unsigned long	ft_atoi_long(const char *str);
+long long		ft_atoi_long(const char *str);
 char			*ft_itoa(int n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);

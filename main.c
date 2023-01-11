@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:42:54 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/09 12:45:19 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:53:41 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,15 @@ int	main(int n, char **v)
 
 	a = ft_parse_it(n, v);
 	ft_index_it(&a);
-	if (ft_lst_len(a) <= 5)
-		ft_part_one(&a, &b);
-	else
+	if (!ft_issorted(a))
 	{
-		push_to_b(&a, &b);
-		ft_push_it_back(&a, &b);
+		if (ft_lst_len(a) <= 5)
+			ft_part_one(&a, &b);
+		else
+		{
+			push_to_b(&a, &b);
+			ft_push_it_back(&a, &b);
+		}
 	}
 	ft_free_list_d(&a);
 	return (0);
